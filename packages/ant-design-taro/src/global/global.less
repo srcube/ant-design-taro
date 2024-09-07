@@ -1,0 +1,65 @@
+@import './theme-default.less';
+@import './theme-dark.less';
+
+page,
+tabbar {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+page,
+tabbar {
+  background-color: var(--adt-color-background-body);
+}
+
+page,
+tabbar {
+  color: var(--adt-color-text);
+  font-size: var(--adt-font-size-main);
+  font-family: var(--adt-font-family);
+}
+
+// Remove native button border
+button {
+  &[loading]::before {
+    display: none;
+  }
+  &::after {
+    border: none;
+  }
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+a {
+  color: var(--adt-color-primary);
+  transition: opacity ease-in-out 0.2s;
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+.adt-plain-anchor {
+  color: unset;
+  transition: none;
+  &:active {
+    opacity: unset;
+  }
+}
+
+body.adt-overflow-hidden {
+  overflow: hidden !important;
+}
+
+div.adt-px-tester {
+  --size: 1;
+  height: calc(var(--size) / 2 * 2px);
+  width: 0;
+  position: fixed;
+  left: -100vw;
+  top: -100vh;
+  user-select: none;
+  pointer-events: none;
+}

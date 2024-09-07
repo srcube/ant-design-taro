@@ -1,0 +1,13 @@
+
+# moon
+.moon/cache
+.moon/docker
+
+# node modules
+node_modules
+
+# dist
+dist
+
+# compile
+.swc

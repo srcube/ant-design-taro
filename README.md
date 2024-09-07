@@ -1,2 +1,3 @@
-# ant-design-taro
-Ant Design for Taro.js
+# Ant Design Taro
+
+Ant Design Mobile components for Taro.js

@@ -1,0 +1,11 @@
+type: 'library'
+
+tasks:
+  lint:
+    command: 'pnpm lint'
+  build:
+    command: 'pnpm build'
+  watch:
+    command: 'pnpm watch'
+    options:
+      cache: false

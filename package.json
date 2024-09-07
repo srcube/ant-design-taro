@@ -1,0 +1,23 @@
+{
+  "name": "srcube",
+  "version": "0.0.1",
+  "description": "Ant Design for Taro.js",
+  "private": true,
+  "workspaces": ["packages/*"],
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "build:lib": "moon ant-design-taro:build",
+    "format": "biome format --write"
+  },
+  "keywords": ["Srcube", "Ant Design Mobile", "Taro", "React"],
+  "author": "Srcube",
+  "license": "MIT",
+  "devDependencies": {
+    "@biomejs/biome": "^1.8.3",
+    "@moonrepo/cli": "^1.28.1"
+  },
+  "packageManager": "pnpm@9.8.0",
+  "engines": {
+    "node": "22.6.0"
+  }
+}

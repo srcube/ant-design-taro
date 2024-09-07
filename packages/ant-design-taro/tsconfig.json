@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "esnext",
+    "lib": ["esnext"],
+    "declaration": true,
+    "declarationMap": false,
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
+    "incremental": false,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "moduleResolution": "bundler",
+    "noUncheckedIndexedAccess": true,
+    "outDir": "dist",
+    "noEmit": false,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "baseUrl": "./src"
+  },
+  "exclude": ["node_modules", "dist"],
+  "include": ["src"]
+}

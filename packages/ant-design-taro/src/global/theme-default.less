@@ -1,0 +1,54 @@
+page, tabbar {
+  // Currently internal variables:
+  --adt-radius-s: 4px;
+  --adt-radius-m: 8px;
+  --adt-radius-l: 12px;
+
+  --adt-font-size-1: 9px;
+  --adt-font-size-2: 10px;
+  --adt-font-size-3: 11px;
+  --adt-font-size-4: 12px;
+  --adt-font-size-5: 13px;
+  --adt-font-size-6: 14px;
+  --adt-font-size-7: 15px;
+  --adt-font-size-8: 16px;
+  --adt-font-size-9: 17px;
+  --adt-font-size-10: 18px;
+
+  // variables should be exposed to users:
+  --adt-color-primary: #1677ff;
+  --adt-color-success: #00b578;
+  --adt-color-warning: #ff8f1f;
+  --adt-color-danger: #ff3141;
+
+  --adt-color-yellow: #ff9f18;
+  --adt-color-orange: #ff6430;
+  --adt-color-wathet: #e7f1ff;
+
+  --adt-color-text: #333333;
+  --adt-color-text-secondary: #666666;
+  --adt-color-weak: #999999;
+  --adt-color-light: #cccccc;
+  --adt-color-border: #eeeeee;
+  --adt-color-background: #ffffff;
+
+  --adt-color-highlight: var(--adt-color-danger);
+
+  // Deprecated. We use `--adt-color-text-light-solid` in code
+  // but keep here for compatible
+  --adt-color-white: #ffffff;
+  --adt-color-box: #f5f5f5;
+
+  --adt-color-text-light-solid: var(--adt-color-white);
+  --adt-color-text-dark-solid: #000000;
+  --adt-color-fill-content: var(--adt-color-box);
+
+  --adt-font-size-main: var(--adt-font-size-5);
+
+  --adt-font-family: -apple-system, blinkmacsystemfont, 'Helvetica Neue',
+    helvetica, segoe ui, arial, roboto, 'PingFang SC', 'miui',
+    'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+
+  // The variables below are deprecated and only exist for backward compatibility:
+  --adt-border-color: var(--adt-color-border);
+}
