@@ -1,3 +1,4 @@
 export default definePageConfig({
-  navigationBarTitleText: '首页',
+  navigationBarTitleText: 'Ant Design Taro',
+  navigationStyle: 'custom',
 })

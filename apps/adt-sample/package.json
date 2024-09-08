@@ -32,7 +32,11 @@
     "dev:harmony-hybrid": "npm run build:harmony-hybrid -- --watch",
     "test": "jest"
   },
-  "browserslist": ["last 3 versions", "Android >= 4.1", "ios >= 8"],
+  "browserslist": [
+    "last 3 versions",
+    "Android >= 4.1",
+    "ios >= 8"
+  ],
   "author": "",
   "dependencies": {
     "@babel/runtime": "^7.21.5",
@@ -53,6 +57,7 @@
     "@tarojs/shared": "3.6.34",
     "@tarojs/taro": "3.6.34",
     "@unocss/webpack": "^0.62.3",
+    "classnames": "^2.5.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "unocss": "^0.62.3",
