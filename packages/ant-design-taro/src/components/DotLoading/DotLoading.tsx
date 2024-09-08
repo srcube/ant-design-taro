@@ -8,9 +8,9 @@ import cn from 'classnames'
 const classPrefix = `adt-dot-loading`
 
 const colorRecord: Record<string, string> = {
-  default: 'var(--adm-color-weak)',
-  primary: 'var(--adm-color-primary)',
-  white: 'var(--adm-color-white)',
+  default: 'var(--adt-color-weak)',
+  primary: 'var(--adt-color-primary)',
+  white: 'var(--adt-color-white)',
 }
 
 export type DotLoadingProps = {
@@ -25,13 +25,11 @@ export const DotLoading = memo<DotLoadingProps>((p) => {
   const props = mergeProps(defaultProps, p)
   return withNativeProps(
     props,
-    <View
+    <Text
       style={{
-        color: colorRecord[props.color] ?? props.color,
+        backgroundColor: colorRecord[props.color] ?? props.color,
       }}
       className={cn('adt-loading', classPrefix)}
-    >
-      <Text className={cn(classPrefix, `${classPrefix}-icon`)} />
-    </View>,
+    />,
   )
 })

@@ -1,0 +1,45 @@
+@class-prefix-divider: ~'adt-divider';
+
+.@{class-prefix-divider} {
+}
+
+.adt-divider-horizontal {
+  display: flex;
+  align-items: center;
+  margin: 16px 0;
+  border-width: 0;
+  border-color: var(--adt-color-border);
+  border-style: solid;
+  color: var(--adt-color-weak);
+  font-size: 14px;
+  .adt-divider-left&::before {
+    max-width: 10%;
+  }
+  .adt-divider-right&::after {
+    max-width: 10%;
+  }
+  &::after,
+  &::before {
+    flex: auto;
+    display: block;
+    content: '';
+    border-style: inherit;
+    border-color: inherit;
+    border-width: 1px 0 0;
+  }
+  .adt-divider-content {
+    flex: none;
+    padding: 0 16px;
+  }
+}
+
+.adt-divider-vertical {
+  position: relative;
+  top: -0.06em;
+  display: inline-block;
+  height: 0.9em;
+  margin: 0 16px;
+  vertical-align: middle;
+  border-top: 0;
+  border-left: 1px solid var(--adt-color-border);
+}
