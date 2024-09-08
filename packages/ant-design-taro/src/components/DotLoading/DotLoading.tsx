@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import { View, Text } from '@tarojs/components'
+import { Text } from '@tarojs/components'
 import { mergeProps } from '../../utils/with-default-props'
 import { NativeProps, withNativeProps } from '../../utils/native-props'
 

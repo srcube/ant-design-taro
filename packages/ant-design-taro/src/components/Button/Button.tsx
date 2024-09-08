@@ -1,9 +1,14 @@
-import { forwardRef, useImperativeHandle, useRef } from 'react'
+import { forwardRef, useImperativeHandle, useRef, useState } from 'react'
 import type { ReactNode } from 'react'
 import { Button as TButton, Text, View } from '@tarojs/components'
-import type { ButtonProps as TButtonProps } from '@tarojs/components'
+import type {
+  BaseEventOrig,
+  ButtonProps as TButtonProps,
+} from '@tarojs/components'
+
 import { NativeProps, withNativeProps } from '../../utils/native-props'
 import { mergeProps } from '../../utils/with-default-props'
+import { isPromise } from '../../utils/validate'
 
 import cn from 'classnames'
 
@@ -20,12 +25,12 @@ export type ButtonProps = {
   block?: boolean
   loadingText?: string
   loadingIcon?: ReactNode
-  disabled?: boolean
+  loading?: boolean | 'auto'
   shape?: 'default' | 'rounded' | 'rectangular'
   children?: ReactNode
 } & Pick<
   NativeButtonProps,
-  'id' | 'loading' | 'onTap' | 'onTouchStart' | 'onTouchEnd'
+  'id' | 'disabled' | 'onTap' | 'onTouchStart' | 'onTouchEnd'
 > &
   NativeProps<
     | '--text-color'
@@ -53,9 +58,12 @@ const defaultProps: ButtonProps = {
 export const Button = forwardRef<ButtonRef, ButtonProps>((p, ref) => {
   const props = mergeProps(defaultProps, p)
 
+  const [innerLoading, setInnerLoading] = useState(false)
+
   const nativeButtonRef = useRef<typeof TButton>(null!)
 
-  const disabled = props.disabled || props.loading
+  const loading = props.loading === 'auto' ? innerLoading : props.loading
+  const disabled = props.disabled || loading
 
   useImperativeHandle(ref, () => ({
     get nativeElement() {
@@ -63,13 +71,30 @@ export const Button = forwardRef<ButtonRef, ButtonProps>((p, ref) => {
     },
   }))
 
+  const onTap = async (event: BaseEventOrig) => {
+    if (!props.onTap) return
+
+    const promise = props.onTap(event)
+
+    if (isPromise(promise)) {
+      try {
+        setInnerLoading(true)
+        await promise
+        setInnerLoading(false)
+      } catch (e) {
+        setInnerLoading(false)
+        throw e
+      }
+    }
+  }
+
   return withNativeProps(
     props,
     <TButton
       ref={nativeButtonRef}
       disabled={disabled}
-      loading={props.loading}
-      onTap={props.onTap}
+      loading={loading}
+      onTap={onTap}
       onTouchStart={props.onTouchStart}
       onTouchEnd={props.onTouchEnd}
       className={cn(

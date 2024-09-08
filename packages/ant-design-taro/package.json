@@ -8,7 +8,9 @@
   },
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": "./dist/index.js",
     "./*": "./dist/*"
@@ -21,6 +23,7 @@
     "@tarojs/runtime": "3.6.34",
     "@tarojs/shared": "3.6.34",
     "@tarojs/taro": "3.6.34",
+    "ahooks": "^3.8.1",
     "classnames": "^2.5.1",
     "react": "^18.0.0"
   },
