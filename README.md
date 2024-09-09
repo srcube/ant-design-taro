@@ -74,7 +74,7 @@ moon atd-sample:dev-weapp
 - [] Loading
 - [] Mask
 - [] Modal
-- [] NavBar
+- [x] NavBar
 - [] NoticeBar
 - [] NumberKeyboard
 - [] PageIndicator
@@ -112,4 +112,4 @@ moon atd-sample:dev-weapp
 - [] Toast
 - [] TreeSelect
 - [] VirtualInput
-- [] WaterMark
+- [x] WaterMark
