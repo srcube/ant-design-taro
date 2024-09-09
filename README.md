@@ -28,11 +28,12 @@ moon atd-sample:dev-weapp
 >
 > - Grid
 > - Space
+> - AutoCenter
 
 ### In development
 
 - [] ActionSheet
-- [] AutoCenter
+- [] ~~AutoCenter~~
 - [] Avatar
 - [] Badge
 - [x] Button
@@ -89,7 +90,7 @@ moon atd-sample:dev-weapp
 - [] Rate
 - [] Result
 - [] ResultPage
-- [] SafeArea
+- [x] SafeArea
 - [] ScrollMask
 - [] SearchBar
 - [] Segmented

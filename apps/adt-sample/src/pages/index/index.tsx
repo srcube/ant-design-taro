@@ -6,27 +6,28 @@ import {
   Divider,
   DotLoading,
   Radio,
+  SafeArea,
   Switch,
 } from '@srcube/ant-design-taro'
 
 import './index.less'
-import { useState } from 'react'
 
 export default function Index() {
   useLoad(() => {
     console.log('Page loaded.')
   })
 
-  const [checked, setChecked] = useState(false)
-
   return (
     <View>
-      <View className=':uno: fixed top-0 inset-x-0 flex items-center justify-center z-999 h-18 bg-white b-b b-b-solid b-b-light-9'>
-        <Text className=':uno: c-blue-6 text-xl font-bold'>
-          Ant Design Taro
-        </Text>
+      <View className=':uno: sticky top-0 inset-x-0 z-999'>
+        <SafeArea position='top' className='bg-white' />
+        <View className=':uno: flex items-center justify-center h-14 bg-white b-b b-b-solid b-b-light-9'>
+          <Text className=':uno: c-blue-6 text-xl font-bold'>
+            Ant Design Taro
+          </Text>
+        </View>
       </View>
-      <View className=':uno: flex flex-col gap-8 items-center px-4 pt-22 min-h-vh w-full box-border'>
+      <View className=':uno: flex flex-col gap-8 items-center p-4 min-h-vh w-full box-border'>
         <View className=':uno: grid grid-cols-2 gap-2 w-full'>
           <Overview title='Button'>
             <Button color='primary' size='small' block>
@@ -66,6 +67,7 @@ export default function Index() {
           </Overview>
         </View>
       </View>
+      <SafeArea position='bottom' />
     </View>
   )
 }
