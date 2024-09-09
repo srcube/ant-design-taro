@@ -1,0 +1,17 @@
+type: 'application'
+
+tasks:
+  lint:
+    command: 'pnpm lint'
+  dev-weapp:
+    command: 'pnpm dev:weapp'
+    deps:
+      - ant-design-taro:build
+    options:
+      cache: false
+  dev-h5:
+    command: 'pnpm dev:h5'
+    deps:
+      - ant-design-taro:build
+    options:
+      cache: false

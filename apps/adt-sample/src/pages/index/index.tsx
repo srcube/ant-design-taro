@@ -1,14 +1,23 @@
 import { useLoad } from '@tarojs/taro'
-import { View, Text } from '@tarojs/components'
+import { View, Text, Radio as TRadio } from '@tarojs/components'
 import { Overview } from '@/components/Overview'
-import { Button, Divider, DotLoading, Switch } from '@srcube/ant-design-taro'
+import {
+  Button,
+  Divider,
+  DotLoading,
+  Radio,
+  Switch,
+} from '@srcube/ant-design-taro'
 
 import './index.less'
+import { useState } from 'react'
 
 export default function Index() {
   useLoad(() => {
     console.log('Page loaded.')
   })
+
+  const [checked, setChecked] = useState(false)
 
   return (
     <View>
@@ -41,6 +50,19 @@ export default function Index() {
             contentClass=':uno: flex items-center justify-center gap-2'
           >
             <Switch uncheckedText='关' checkedText='开' className='text-xs' />
+          </Overview>
+          <Overview
+            title='Radio'
+            contentClass=':uno: flex items-center justify-center gap-2'
+          >
+            <Radio.Group defaultValue='1'>
+              <Radio value='1' style={{ '--font-size': '14px' }}>
+                R 1
+              </Radio>
+              <Radio value='2' style={{ '--font-size': '14px' }}>
+                R 2
+              </Radio>
+            </Radio.Group>
           </Overview>
         </View>
       </View>

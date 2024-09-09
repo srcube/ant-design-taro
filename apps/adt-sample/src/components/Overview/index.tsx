@@ -18,7 +18,7 @@ export const Overview: FC<PropsWithChildren<DemoProps>> = ({
   return (
     <View
       className={cn(
-        ':uno: flex-col gap-2 items-center p-2 w-full box-border rounded b b-solid b-light-6 shadow-sm',
+        ':uno: flex-col gap-2 items-center p-2 w-full box-border rounded-lg b b-solid b-light-6 shadow-sm',
         className,
       )}
     >
