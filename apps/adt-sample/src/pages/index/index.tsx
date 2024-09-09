@@ -1,5 +1,5 @@
 import { useLoad } from '@tarojs/taro'
-import { View, Text, Radio as TRadio } from '@tarojs/components'
+import { View, Text } from '@tarojs/components'
 import { Overview } from '@/components/Overview'
 import {
   Button,
@@ -8,6 +8,7 @@ import {
   Radio,
   SafeArea,
   Switch,
+  WaterMark,
 } from '@srcube/ant-design-taro'
 
 import './index.less'
@@ -27,7 +28,8 @@ export default function Index() {
           </Text>
         </View>
       </View>
-      <View className=':uno: flex flex-col gap-8 items-center p-4 min-h-vh w-full box-border'>
+      <View className=':uno: relative flex flex-col gap-8 items-center p-4 min-h-vh w-full box-border'>
+        <WaterMark content={['Srcube', 'Ant Design Taro']} fullPage={false} />
         <View className=':uno: grid grid-cols-2 gap-2 w-full'>
           <Overview title='Button'>
             <Button color='primary' size='small' block>

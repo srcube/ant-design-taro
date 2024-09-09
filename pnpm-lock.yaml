@@ -229,6 +229,9 @@ importers:
       less:
         specifier: ^4.2.0
         version: 4.2.0
+      miniprogram-api-typings:
+        specifier: ^3.12.3
+        version: 3.12.3
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
