@@ -96,7 +96,13 @@ export const Radio: FC<RadioProps> = (p) => {
       )
     }
 
-    return <View className={`${classPrefix}-icon`}>{checked && <Check />}</View>
+    return (
+      <View className={`${classPrefix}-icon`}>
+        {checked && (
+          <Check style={{ backgroundColor: 'var(--adt-color-white)' }} />
+        )}
+      </View>
+    )
   }
 
   const onClick = (event: ITouchEvent) => {

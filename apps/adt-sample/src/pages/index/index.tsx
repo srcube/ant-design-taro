@@ -5,6 +5,7 @@ import {
   Button,
   Divider,
   DotLoading,
+  NavBar,
   Radio,
   SafeArea,
   Switch,
@@ -66,6 +67,22 @@ export default function Index() {
                 R 2
               </Radio>
             </Radio.Group>
+          </Overview>
+          <Overview
+            title='Nav Bar'
+            className=':uno: col-span-2'
+            contentClass=':uno: flex items-center justify-center gap-2'
+          >
+            <NavBar
+              onBack={() => {
+                console.log('BACK TAP')
+              }}
+              back='Back'
+              right="ooo"
+              className=':uno: w-full'
+            >
+              Ant Design
+            </NavBar>
           </Overview>
         </View>
       </View>
