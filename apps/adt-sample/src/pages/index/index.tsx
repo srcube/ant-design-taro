@@ -9,6 +9,7 @@ import {
   NavBar,
   Radio,
   SafeArea,
+  SideBar,
   Switch,
   TabBar,
   WaterMark,
@@ -21,36 +22,60 @@ export default function Index() {
     console.log('Page loaded.')
   })
 
-  const tabs = [
-    {
-      key: 'home',
-      title: '首页',
-      icon: <Text className='i-ant-design:home-outlined inline-block' />,
-      badge: Badge.dot,
-    },
-    {
-      key: 'todo',
-      title: '待办',
-      icon: <Text className='i-ant-design:unordered-list-outlined inline-block' />,
-      badge: '5',
-    },
-    {
-      key: 'message',
-      title: '消息',
-      icon: (active: boolean) =>
-        active ? (
-          <Text className='i-ant-design:message-filled inline-block' />
-        ) : (
-          <Text className='i-ant-design:message-outlined inline-block' />
+  const tabs = {
+    tabbar: [
+      {
+        key: 'home',
+        title: '首页',
+        icon: <Text className='i-ant-design:home-outlined inline-block' />,
+        badge: Badge.dot,
+      },
+      {
+        key: 'todo',
+        title: '待办',
+        icon: (
+          <Text className='i-ant-design:unordered-list-outlined inline-block' />
         ),
-      badge: '99+',
-    },
-    {
-      key: 'personalCenter',
-      title: '我的',
-      icon: <Text className='i-ant-design:ant-design-outlined inline-block' />,
-    },
-  ]
+        badge: '5',
+      },
+      {
+        key: 'message',
+        title: '消息',
+        icon: (active: boolean) =>
+          active ? (
+            <Text className='i-ant-design:message-filled inline-block' />
+          ) : (
+            <Text className='i-ant-design:message-outlined inline-block' />
+          ),
+        badge: '99+',
+      },
+      {
+        key: 'personalCenter',
+        title: '我的',
+        icon: (
+          <Text className='i-ant-design:ant-design-outlined inline-block' />
+        ),
+      },
+    ],
+    sidebar: [
+      {
+        key: 'key1',
+        title: '选项一',
+        badge: Badge.dot,
+      },
+      {
+        key: 'key2',
+        title: '选项二',
+        badge: '5',
+      },
+      {
+        key: 'key3',
+        title: '选项三',
+        badge: '99+',
+        disabled: true,
+      },
+    ],
+  }
 
   return (
     <View>
@@ -101,6 +126,13 @@ export default function Index() {
               </Radio>
             </Radio.Group>
           </Overview>
+          <Overview title='Side Bar' contentClass=':uno: flex flex-col gap-2'>
+            <SideBar className='mx-auto'>
+              {tabs.sidebar.map((t) => (
+                <SideBar.Item key={t.key} title={t.title} badge={t.badge} />
+              ))}
+            </SideBar>
+          </Overview>
           <Overview
             title='Nav Bar'
             className=':uno: col-span-2'
@@ -123,7 +155,7 @@ export default function Index() {
             contentClass=':uno: flex flex-col gap-2'
           >
             <TabBar className=''>
-              {tabs.map((t) => (
+              {tabs.tabbar.map((t) => (
                 <TabBar.Item
                   key={t.key}
                   icon={t.icon}
