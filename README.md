@@ -35,7 +35,7 @@ moon atd-sample:dev-weapp
 - [] ActionSheet
 - [] ~~AutoCenter~~
 - [] Avatar
-- [] Badge
+- [x] Badge
 - [x] Button
 - [] Calendar
 - [] CalenderPicker
@@ -98,14 +98,14 @@ moon atd-sample:dev-weapp
 - [] SideBar
 - [] Skeleton
 - [] Slider
-- ~~[] Space~~
+- [] ~~Space~~
 - [] SpinLoading
 - [] Stepper
 - [] Steps
 - [] SwipeAction
 - [] Swiper
 - [x] Switch
-- [] TabBar
+- [x] TabBar
 - [] Tabs
 - [] Tag
 - [] TextArea
