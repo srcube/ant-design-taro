@@ -2,6 +2,7 @@ import { useLoad } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
 import { Overview } from '@/components/Overview'
 import {
+  Badge,
   Button,
   Divider,
   DotLoading,
@@ -9,6 +10,7 @@ import {
   Radio,
   SafeArea,
   Switch,
+  TabBar,
   WaterMark,
 } from '@srcube/ant-design-taro'
 
@@ -19,9 +21,40 @@ export default function Index() {
     console.log('Page loaded.')
   })
 
+  const tabs = [
+    {
+      key: 'home',
+      title: '首页',
+      icon: <Text className='i-ant-design:home-outlined inline-block' />,
+      badge: Badge.dot,
+    },
+    {
+      key: 'todo',
+      title: '待办',
+      icon: <Text className='i-ant-design:unordered-list-outlined inline-block' />,
+      badge: '5',
+    },
+    {
+      key: 'message',
+      title: '消息',
+      icon: (active: boolean) =>
+        active ? (
+          <Text className='i-ant-design:message-filled inline-block' />
+        ) : (
+          <Text className='i-ant-design:message-outlined inline-block' />
+        ),
+      badge: '99+',
+    },
+    {
+      key: 'personalCenter',
+      title: '我的',
+      icon: <Text className='i-ant-design:ant-design-outlined inline-block' />,
+    },
+  ]
+
   return (
     <View>
-      <View className=':uno: sticky top-0 inset-x-0 z-999'>
+      <View className=':uno: sticky top-0 inset-x-0 z-9999'>
         <SafeArea position='top' className='bg-white' />
         <View className=':uno: flex items-center justify-center h-14 bg-white b-b b-b-solid b-b-light-9'>
           <Text className=':uno: c-blue-6 text-xl font-bold'>
@@ -78,11 +111,27 @@ export default function Index() {
                 console.log('BACK TAP')
               }}
               back='Back'
-              right="ooo"
+              right='ooo'
               className=':uno: w-full'
             >
               Ant Design
             </NavBar>
+          </Overview>
+          <Overview
+            title='Tab Bar'
+            className=':uno: col-span-2'
+            contentClass=':uno: flex flex-col gap-2'
+          >
+            <TabBar className=''>
+              {tabs.map((t) => (
+                <TabBar.Item
+                  key={t.key}
+                  icon={t.icon}
+                  title={t.title}
+                  badge={t.badge}
+                />
+              ))}
+            </TabBar>
           </Overview>
         </View>
       </View>

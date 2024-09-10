@@ -25,11 +25,13 @@
     "@tarojs/taro": "3.6.34",
     "ahooks": "^3.8.1",
     "classnames": "^2.5.1",
-    "react": "^18.0.0"
+    "react": "^18.0.0",
+    "react-is": "^18.3.1"
   },
   "devDependencies": {
     "@types/node": "^18.19.50",
     "@types/react": "^18.0.0",
+    "@types/react-is": "^18.3.0",
     "autoprefixer": "^10.4.20",
     "esbuild": "^0.23.1",
     "esbuild-plugin-clean": "^1.0.1",
