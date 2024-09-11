@@ -12,6 +12,7 @@ import {
   SideBar,
   Switch,
   TabBar,
+  Tabs,
   WaterMark,
 } from '@srcube/ant-design-taro'
 
@@ -81,14 +82,16 @@ export default function Index() {
     <View>
       <View className=':uno: sticky top-0 inset-x-0 z-9999'>
         <SafeArea position='top' className='bg-white' />
-        <View className=':uno: flex items-center justify-center h-14 bg-white b-b b-b-solid b-b-light-9'>
+        <View
+          id='header'
+          className=':uno: flex items-center justify-center h-14 bg-white b-b b-b-solid b-b-light-9'
+        >
           <Text className=':uno: c-blue-6 text-xl font-bold'>
             Ant Design Taro
           </Text>
         </View>
       </View>
       <View className=':uno: relative flex flex-col gap-8 items-center p-4 min-h-vh w-full box-border'>
-        <WaterMark content={['Srcube', 'Ant Design Taro']} fullPage={false} />
         <View className=':uno: grid grid-cols-2 gap-2 w-full'>
           <Overview title='Button'>
             <Button color='primary' size='small' block>
@@ -134,6 +137,17 @@ export default function Index() {
             </SideBar>
           </Overview>
           <Overview
+            title='Water Mark'
+            className='col-span-2'
+            contentClass=':uno: relative flex items-center justify-center gap-2 h-20'
+          >
+            <WaterMark
+              content={['Srcube', 'Ant Design Taro']}
+              gapX={0}
+              fullPage={false}
+            />
+          </Overview>
+          <Overview
             title='Nav Bar'
             className=':uno: col-span-2'
             contentClass=':uno: flex items-center justify-center gap-2'
@@ -164,6 +178,19 @@ export default function Index() {
                 />
               ))}
             </TabBar>
+          </Overview>
+          <Overview
+            title='Tabs'
+            className=':uno: col-span-2'
+            contentClass=':uno: flex flex-col gap-2'
+          >
+            <Tabs defaultActiveKey='3' activeLineMode='full'>
+              {Array.from({ length: 10 }, (_, i) => (
+                <Tabs.Tab title={`Tab ${i + 1}`} key={i}>
+                  CONTENT {i + 1}
+                </Tabs.Tab>
+              ))}
+            </Tabs>
           </Overview>
         </View>
       </View>

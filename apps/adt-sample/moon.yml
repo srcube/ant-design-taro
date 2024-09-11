@@ -15,3 +15,15 @@ tasks:
       - ant-design-taro:build
     options:
       cache: false
+  build-weapp:
+    command: 'pnpm build:weapp'
+    deps:
+      - ant-design-taro:build
+    options:
+      cache: false
+  build-h5:
+    command: 'pnpm build:h5'
+    deps:
+      - ant-design-taro:build
+    options:
+      cache: false
