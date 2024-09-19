@@ -32,11 +32,7 @@
     "dev:harmony-hybrid": "npm run build:harmony-hybrid -- --watch",
     "test": "jest"
   },
-  "browserslist": [
-    "last 3 versions",
-    "Android >= 4.1",
-    "ios >= 8"
-  ],
+  "browserslist": ["last 3 versions", "Android >= 4.1", "ios >= 8"],
   "author": "",
   "dependencies": {
     "@babel/runtime": "^7.21.5",

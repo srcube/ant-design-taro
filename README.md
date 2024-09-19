@@ -5,6 +5,8 @@
   <h1 style="line-height: 80px">Ant Design Taro</h1>
 
   <p>Ant Design Mobile components for Taro.js</p>
+
+  <img src="./images/preview.jpg" style="margin: 0 auto" width="300" />
 </div>
 
 
@@ -34,7 +36,7 @@ moon atd-sample:dev-weapp
 
 - [] ActionSheet
 - [] ~~AutoCenter~~
-- [] Avatar
+- [x] Avatar
 - [x] Badge
 - [x] Button
 - [] Calendar
@@ -64,7 +66,7 @@ moon atd-sample:dev-weapp
 - [] Footer
 - [] Form
 - [] ~~Grid~~
-- [] Image
+- [x] Image
 - [] ImageUploader
 - [] IndexBar
 - [] InfiniteScroll
@@ -106,7 +108,7 @@ moon atd-sample:dev-weapp
 - [] Swiper
 - [x] Switch
 - [x] TabBar
-- [] Tabs
+- [x] Tabs
 - [] Tag
 - [] TextArea
 - [] Toast

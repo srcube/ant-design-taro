@@ -213,6 +213,9 @@ importers:
       react-is:
         specifier: ^18.3.1
         version: 18.3.1
+      staged-components:
+        specifier: ^1.1.3
+        version: 1.1.3(react@18.3.1)
     devDependencies:
       '@types/node':
         specifier: ^18.19.50
@@ -7396,6 +7399,11 @@ packages:
 
   stackframe@1.3.4:
     resolution: {integrity: sha512-oeVtt7eWQS+Na6F//S4kJ2K2VbRlS9D43mAlMyVpVWovy9o+jfgH8O9agzANzaiLjclA0oYzUXEM4PurhSUChw==}
+
+  staged-components@1.1.3:
+    resolution: {integrity: sha512-9EIswzDqjwlEu+ymkV09TTlJfzSbKgEnNteUnZSTxkpMgr5Wx2CzzA9WcMFWBNCldqVPsHVnRGGrApduq2Se5A==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
   statuses@1.5.0:
     resolution: {integrity: sha512-OpZ3zP+jT1PI7I8nemJX4AKmAX070ZkYPVWV/AaKTJl+tXCTGyVdC1a4SL8RUQYEwk/f34ZX8UTykN68FwrqAA==}
@@ -16660,6 +16668,10 @@ snapshots:
       escape-string-regexp: 2.0.0
 
   stackframe@1.3.4: {}
+
+  staged-components@1.1.3(react@18.3.1):
+    dependencies:
+      react: 18.3.1
 
   statuses@1.5.0: {}
 
