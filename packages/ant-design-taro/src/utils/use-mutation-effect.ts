@@ -4,7 +4,7 @@ import { RefObject, useEffect } from 'react'
 export function observe(
   element: HTMLElement | null,
   options: MutationObserverInit,
-  callback: VoidFunction
+  callback: VoidFunction,
 ) {
   if (element && typeof MutationObserver !== 'undefined') {
     let observer: MutationObserver | null = new MutationObserver(() => {
@@ -27,7 +27,7 @@ export function observe(
 export function useMutationEffect(
   effect: () => void,
   targetRef: RefObject<HTMLElement>,
-  options: MutationObserverInit
+  options: MutationObserverInit,
 ) {
   const fn = useMemoizedFn(effect)
   useEffect(() => {

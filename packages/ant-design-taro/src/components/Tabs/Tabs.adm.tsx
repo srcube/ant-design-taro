@@ -57,7 +57,7 @@ const defaultProps = {
   direction: 'ltr',
 }
 
-export const Tabs: FC<TabsProps> = p => {
+export const Tabs: FC<TabsProps> = (p) => {
   const props = mergeProps(defaultProps, p)
   const tabListContainerRef = useRef<HTMLDivElement>(null)
   const activeLineRef = useRef<HTMLDivElement>(null)
@@ -83,7 +83,7 @@ export const Tabs: FC<TabsProps> = p => {
   const [activeKey, setActiveKey] = usePropsValue({
     value: props.activeKey,
     defaultValue: props.defaultActiveKey ?? firstActiveKey,
-    onChange: v => {
+    onChange: (v) => {
       if (v === null) return
       props.onChange?.(v)
     },
@@ -131,7 +131,7 @@ export const Tabs: FC<TabsProps> = p => {
     if (!activeLine) return
 
     const activeTabWrapper = container.children.item(
-      activeIndex + 1
+      activeIndex + 1,
     ) as HTMLDivElement
     const activeTab = activeTabWrapper.children.item(0) as HTMLDivElement
     const activeTabLeft = activeTab.offsetLeft
@@ -190,13 +190,13 @@ export const Tabs: FC<TabsProps> = p => {
           activeTabWidth / 2 -
           activeLineWidth,
         0,
-        maxScrollDistance
+        maxScrollDistance,
       )
     } else {
       nextScrollLeft = bound(
         activeTabLeft - (containerWidth - activeTabWidth) / 2,
         0,
-        maxScrollDistance
+        maxScrollDistance,
       )
     }
 
@@ -230,7 +230,7 @@ export const Tabs: FC<TabsProps> = p => {
       subtree: true,
       childList: true,
       characterData: true,
-    }
+    },
   )
 
   const { run: updateMask } = useThrottleFn(
@@ -269,7 +269,7 @@ export const Tabs: FC<TabsProps> = p => {
       wait: 100,
       trailing: true,
       leading: true,
-    }
+    },
   )
 
   useIsomorphicLayoutEffect(() => {
@@ -288,7 +288,7 @@ export const Tabs: FC<TabsProps> = p => {
         <animated.div
           className={classNames(
             `${classPrefix}-header-mask`,
-            `${classPrefix}-header-mask-left`
+            `${classPrefix}-header-mask-left`,
           )}
           style={{
             opacity: leftMaskOpacity,
@@ -297,7 +297,7 @@ export const Tabs: FC<TabsProps> = p => {
         <animated.div
           className={classNames(
             `${classPrefix}-header-mask`,
-            `${classPrefix}-header-mask-right`
+            `${classPrefix}-header-mask-right`,
           )}
           style={{
             opacity: rightMaskOpacity,
@@ -321,7 +321,7 @@ export const Tabs: FC<TabsProps> = p => {
               x,
             }}
           />
-          {panes.map(pane =>
+          {panes.map((pane) =>
             withNativeProps(
               pane.props,
               <div
@@ -348,12 +348,12 @@ export const Tabs: FC<TabsProps> = p => {
                 >
                   {pane.props.title}
                 </div>
-              </div>
-            )
+              </div>,
+            ),
           )}
         </animated.div>
       </div>
-      {panes.map(pane => {
+      {panes.map((pane) => {
         if (pane.props.children === undefined) {
           return null
         }
@@ -374,6 +374,6 @@ export const Tabs: FC<TabsProps> = p => {
           </ShouldRender>
         )
       })}
-    </div>
+    </div>,
   )
 }

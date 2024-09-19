@@ -28,7 +28,7 @@ export function usePropsValue<T>(options: Options<T>) {
       stateRef.current = nextValue
       update()
       return onChange?.(nextValue)
-    }
+    },
   )
   return [stateRef.current, setState] as const
 }

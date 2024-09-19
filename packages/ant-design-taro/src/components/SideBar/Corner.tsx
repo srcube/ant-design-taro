@@ -12,7 +12,7 @@ export const Corner = memo<NativeProps>((props) => {
     '-webkit-mask': 'var(--icon) 0 0/100% 100% no-repeat',
     mask: `${encodedSVG} 0 0/100% 100% no-repeat`,
     display: 'inline-block',
-    // TODO: --item-border-radius	
+    // TODO: --item-border-radius
     width: '14px',
     height: '14px',
     backgroundColor: 'var(--adt-color-background)',

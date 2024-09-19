@@ -1,2 +1,6 @@
+export * from './BrokenImage'
 export * from './Check'
+export * from './CloseOutline'
+export * from './Image'
 export * from './LeftOutline'
+export * from './SoundOutline'

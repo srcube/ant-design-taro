@@ -1,6 +1,6 @@
 export function mergeLocale<T extends object, P extends object>(
   base: T,
-  patch: P
+  patch: P,
 ): T {
   function merge(a: any, b: any): any {
     if (

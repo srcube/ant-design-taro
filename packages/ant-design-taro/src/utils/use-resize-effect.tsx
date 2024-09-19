@@ -3,7 +3,7 @@ import { useIsomorphicLayoutEffect, useMemoizedFn } from 'ahooks'
 
 export function useResizeEffect<T extends HTMLElement>(
   effect: (target: T) => void,
-  targetRef: RefObject<T>
+  targetRef: RefObject<T>,
 ) {
   const fn = useMemoizedFn(effect)
   useIsomorphicLayoutEffect(() => {

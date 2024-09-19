@@ -1,0 +1,17 @@
+.adt-avatar {
+  --size: var(--adt-avatar-size, 44px);
+  --border-radius: var(--adt-avatar-border-radius, 4px);
+
+  border-radius: var(--border-radius);
+
+  &.adt-image {
+    --width: var(--size);
+    --height: var(--size);
+  }
+
+  &-fallback {
+    height: 100%;
+    width: 100%;
+    display: block;
+  }
+}

@@ -1,4 +1,4 @@
-import { document, window } from "@tarojs/runtime";
+import { document, window } from '@tarojs/runtime'
 
 export const canUseDom = !!(
   typeof window !== 'undefined' &&

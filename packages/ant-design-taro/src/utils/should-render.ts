@@ -8,11 +8,11 @@ interface Props {
   children: ReactElement
 }
 
-export const ShouldRender: FC<Props> = props => {
+export const ShouldRender: FC<Props> = (props) => {
   const shouldRender = useShouldRender(
     props.active,
     props.forceRender,
-    props.destroyOnClose
+    props.destroyOnClose,
   )
   return shouldRender ? props.children : null
 }
@@ -20,7 +20,7 @@ export const ShouldRender: FC<Props> = props => {
 export function useShouldRender(
   active: boolean,
   forceRender?: boolean,
-  destroyOnClose?: boolean
+  destroyOnClose?: boolean,
 ) {
   const initialized = useInitialized(active)
   if (forceRender) return true
