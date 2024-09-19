@@ -5,6 +5,7 @@ import {
   Avatar,
   Badge,
   Button,
+  Card,
   Divider,
   DotLoading,
   Image,
@@ -167,6 +168,20 @@ export default function Index() {
             </SideBar>
           </Overview>
         </View>
+        <Overview
+          title='Card'
+          contentClass=':uno: flex items-center justify-center gap-2 box-border !bg-light-9'
+        >
+          <Card
+            title='CAR TITLE'
+            onClick={() => {
+              console.log('CARD TITLE CLICK')
+            }}
+            className=':uno: m-2 w-full'
+          >
+            Card content
+          </Card>
+        </Overview>
         <Overview
           title='Nav Bar'
           className=':uno: col-span-2'

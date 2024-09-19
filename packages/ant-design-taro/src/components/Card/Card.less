@@ -1,0 +1,28 @@
+@class-prefix-card: ~'adt-card';
+
+.@{class-prefix-card} {
+  background: var(--adt-color-background);
+  border-radius: var(--adt-card-border-radius, 8px);
+  padding: 0 var(--adt-card-padding-inline, 12px);
+  &-header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--adt-card-header-gap, 8px);
+    box-sizing: border-box;
+    padding: var(--adt-card-header-padding-block, 12px) 0;
+    &:not(:last-child) {
+      border-bottom: solid var(--adt-card-header-border-width, 0.5px)
+        var(--adt-card-header-border-color, var(--adt-color-border));
+    }
+    &-title {
+      font-size: var(--adt-font-size-7);
+      line-height: 1.4;
+      font-weight: bold;
+    }
+  }
+  &-body {
+    padding: var(--adt-card-body-padding-block, 12px) 0;
+  }
+}

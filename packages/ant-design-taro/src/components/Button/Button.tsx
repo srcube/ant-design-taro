@@ -1,8 +1,8 @@
 import { forwardRef, useImperativeHandle, useRef, useState } from 'react'
-import type { ReactNode } from 'react'
+import type { PropsWithChildren, ReactNode } from 'react'
 import { Button as TButton, Text, View } from '@tarojs/components'
 import type {
-  BaseEventOrig,
+  ITouchEvent,
   ButtonProps as TButtonProps,
 } from '@tarojs/components'
 
@@ -18,28 +18,29 @@ const classPrefix = `adt-button`
 
 type NativeButtonProps = TButtonProps
 
-export type ButtonProps = {
-  color?: 'default' | 'primary' | 'success' | 'warning' | 'danger'
-  fill?: 'solid' | 'outline' | 'none'
-  size?: 'mini' | 'small' | 'middle' | 'large'
-  block?: boolean
-  loadingText?: string
-  loadingIcon?: ReactNode
-  loading?: boolean | 'auto'
-  shape?: 'default' | 'rounded' | 'rectangular'
-  children?: ReactNode
-} & Pick<
-  NativeButtonProps,
-  'id' | 'disabled' | 'onTap' | 'onTouchStart' | 'onTouchEnd'
-> &
-  NativeProps<
-    | '--text-color'
-    | '--background-color'
-    | '--border-radius'
-    | '--border-width'
-    | '--border-style'
-    | '--border-color'
-  >
+export type ButtonProps = PropsWithChildren<
+  {
+    color?: 'default' | 'primary' | 'success' | 'warning' | 'danger'
+    fill?: 'solid' | 'outline' | 'none'
+    size?: 'mini' | 'small' | 'middle' | 'large'
+    block?: boolean
+    loadingText?: string
+    loadingIcon?: ReactNode
+    loading?: boolean | 'auto'
+    shape?: 'default' | 'rounded' | 'rectangular'
+  } & Pick<
+    NativeButtonProps,
+    'id' | 'disabled' | 'onTouchStart' | 'onTouchEnd' | 'onClick'
+  > &
+    NativeProps<
+      | '--text-color'
+      | '--background-color'
+      | '--border-radius'
+      | '--border-width'
+      | '--border-style'
+      | '--border-color'
+    >
+>
 
 export type ButtonRef = {
   nativeElement: typeof TButton
@@ -71,10 +72,10 @@ export const Button = forwardRef<ButtonRef, ButtonProps>((p, ref) => {
     },
   }))
 
-  const onTap = async (event: BaseEventOrig) => {
-    if (!props.onTap) return
+  const onClick = async (event: ITouchEvent) => {
+    if (!props.onClick) return
 
-    const promise = props.onTap(event)
+    const promise = props.onClick(event)
 
     if (isPromise(promise)) {
       try {
@@ -94,7 +95,7 @@ export const Button = forwardRef<ButtonRef, ButtonProps>((p, ref) => {
       ref={nativeButtonRef}
       disabled={disabled}
       loading={loading}
-      onTap={onTap}
+      onClick={onClick}
       onTouchStart={props.onTouchStart}
       onTouchEnd={props.onTouchEnd}
       className={cn(
