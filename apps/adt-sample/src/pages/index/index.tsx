@@ -16,6 +16,7 @@ import {
   Switch,
   TabBar,
   Tabs,
+  Tag,
   WaterMark,
 } from '@srcube/ant-design-taro'
 
@@ -131,6 +132,13 @@ export default function Index() {
                 R 2
               </Radio>
             </Radio.Group>
+          </Overview>
+          <Overview title='Tag' contentClass=':uno: flex gap-2 flex-wrap'>
+            <Tag color='default'>Default</Tag>
+            <Tag color='primary'>Test</Tag>
+            <Tag color='success'>Success</Tag>
+            <Tag color='warning'>Warning</Tag>
+            <Tag color='danger'>Danger</Tag>
           </Overview>
           <Overview title='Avatar' contentClass=':uno: flex flex-col gap-2'>
             <Avatar src='' />

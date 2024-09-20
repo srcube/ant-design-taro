@@ -43,7 +43,7 @@ moon atd-sample:dev-weapp
 - [] CalenderPicker
 - [] CalenderPickerView
 - [] CapsuleTabs
-- [] Card
+- [x] Card
 - [] CascadeView
 - [] CascadePickerView
 - [] CascaderPicker
@@ -109,7 +109,7 @@ moon atd-sample:dev-weapp
 - [x] Switch
 - [x] TabBar
 - [x] Tabs
-- [] Tag
+- [x] Tag
 - [] TextArea
 - [] Toast
 - [] TreeSelect
