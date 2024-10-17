@@ -6,8 +6,9 @@
   "workspaces": ["packages/*"],
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "build:lib": "moon ant-design-taro:build",
-    "format": "biome format --write"
+    "format": "biome format --write",
+    "dev:sample": "moon adt-sample:dev-weapp",
+    "build:lib": "moon ant-design-taro:build"
   },
   "keywords": ["Srcube", "Ant Design Mobile", "Taro", "React"],
   "author": "Srcube",
