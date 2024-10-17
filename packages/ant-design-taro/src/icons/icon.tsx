@@ -3,7 +3,7 @@ import { Text } from '@tarojs/components'
 
 import cn from 'classnames'
 
-import './index.less'
+import './icon.less'
 
 export type IconProps = {
   style?: CSSProperties
