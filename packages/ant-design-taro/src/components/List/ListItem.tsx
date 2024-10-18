@@ -1,46 +1,46 @@
-import type { FC, ReactNode } from 'react';
-import { type ITouchEvent, View } from '@tarojs/components';
+import type { FC, ReactNode } from 'react'
+import { type ITouchEvent, View } from '@tarojs/components'
 
-import cn from 'classnames';
+import cn from 'classnames'
 
-import { isNodeWithContent } from '../../utils/is-node-with-content';
-import { NativeProps, withNativeProps } from '../../utils/native-props';
-import { mergeProp } from '../../utils/with-default-props';
+import { isNodeWithContent } from '../../utils/is-node-with-content'
+import { NativeProps, withNativeProps } from '../../utils/native-props'
+import { mergeProp } from '../../utils/with-default-props'
 
-import { useConfig } from '../ConfigProvider';
-import { RightOutline } from '../../icons';
+import { useConfig } from '../ConfigProvider'
+import { RightOutline } from '../../icons'
 
-const classPrefix = `adt-list-item`;
+const classPrefix = `adt-list-item`
 
 export type ListItemProps = {
-  title?: ReactNode;
-  children?: ReactNode;
-  description?: ReactNode;
-  prefix?: ReactNode;
-  extra?: ReactNode;
-  clickable?: boolean;
-  arrowIcon?: boolean | ReactNode;
-  disabled?: boolean;
-  onClick?: (event: ITouchEvent) => void;
+  title?: ReactNode
+  children?: ReactNode
+  description?: ReactNode
+  prefix?: ReactNode
+  extra?: ReactNode
+  clickable?: boolean
+  arrowIcon?: boolean | ReactNode
+  disabled?: boolean
+  onClick?: (event: ITouchEvent) => void
   /**
    * @deprecated use `arrowIcon` instead
    */
-  arrow?: boolean | ReactNode;
+  arrow?: boolean | ReactNode
 } & NativeProps<
   '--prefix-width' | '--align-items' | '--active-background-color'
->;
+>
 
 export const ListItem: FC<ListItemProps> = (props) => {
-  const { arrow, arrowIcon } = props;
-  const { list: componentConfig = {} } = useConfig();
-  const clickable = props.clickable ?? !!props.onClick;
+  const { arrow, arrowIcon } = props
+  const { list: componentConfig = {} } = useConfig()
+  const clickable = props.clickable ?? !!props.onClick
 
-  const showArrow = arrow ?? arrowIcon ?? clickable;
+  const showArrow = arrow ?? arrowIcon ?? clickable
   const mergedArrowIcon = mergeProp<React.ReactNode>(
     componentConfig.arrowIcon,
     arrow !== true ? arrow : null,
-    arrowIcon !== true ? arrowIcon : null
-  );
+    arrowIcon !== true ? arrowIcon : null,
+  )
 
   const content = (
     <View className={`${classPrefix}-content`}>
@@ -63,11 +63,13 @@ export const ListItem: FC<ListItemProps> = (props) => {
       )}
       {showArrow && (
         <View className={`${classPrefix}-content-arrow`}>
-          {mergedArrowIcon || <RightOutline style={{ backgroundColor: '#999' }} />}
+          {mergedArrowIcon || (
+            <RightOutline style={{ backgroundColor: '#999' }} />
+          )}
         </View>
       )}
     </View>
-  );
+  )
 
   return withNativeProps(
     props,
@@ -77,11 +79,11 @@ export const ListItem: FC<ListItemProps> = (props) => {
         classPrefix,
         clickable ? [`adt-plain-anchor`] : [],
         props.disabled && `${classPrefix}-disabled`,
-        props.className
+        props.className,
       )}
       onClick={props.disabled ? void 0 : props.onClick}
     >
       {content}
-    </View>
-  );
-};
+    </View>,
+  )
+}
