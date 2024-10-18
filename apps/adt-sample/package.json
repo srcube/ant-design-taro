@@ -61,6 +61,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.8.0",
+    "@faker-js/faker": "^9.0.3",
     "@iconify/json": "^2.2.246",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.5",
     "@tarojs/cli": "3.6.34",
