@@ -10,6 +10,7 @@ import {
   Divider,
   DotLoading,
   Image,
+  Input,
   List,
   NavBar,
   Radio,
@@ -185,6 +186,13 @@ export default function Index() {
             height={100}
             fit='fill'
           />
+        </Overview>
+        {/* Input */}
+        <Overview
+          title='Input'
+          contentClass=':uno: flex items-center justify-center'
+        >
+          <Input focus={true} placeholder='请输入内容' />
         </Overview>
         {/* List */}
         <Overview title='List'>

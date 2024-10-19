@@ -50,7 +50,7 @@ moon atd-sample:dev-weapp
 - [] CenterPopup
 - [] Checkbox
 - [] CheckList
-- [] Collapse
+- [x] Collapse
 - [x] ConfigProvider
 - [] DatePicker
 - [] DatePickerView
@@ -72,7 +72,7 @@ moon atd-sample:dev-weapp
 - [] InfiniteScroll
 - [] Input
 - [] JumboTabs
-- [] List
+- [x] List
 - [] Loading
 - [] Mask
 - [] Modal
