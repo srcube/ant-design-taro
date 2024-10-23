@@ -70,7 +70,7 @@ moon atd-sample:dev-weapp
 - [] ImageUploader
 - [] IndexBar
 - [] InfiniteScroll
-- [] Input
+- [x] Input
 - [] JumboTabs
 - [x] List
 - [] Loading
