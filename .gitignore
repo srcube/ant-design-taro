@@ -11,3 +11,6 @@ dist
 
 # compile
 .swc
+
+# vitepress
+.vitepress/cache
