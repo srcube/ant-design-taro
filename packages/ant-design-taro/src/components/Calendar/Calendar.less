@@ -1,0 +1,111 @@
+.adt-calendar {
+  & &-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 4px;
+    view.adt-calendar-arrow-button {
+      padding: 4px 8px;
+      display: block;
+      flex: none;
+      view {
+        height: 22px;
+      }
+      &.adt-calendar-arrow-button-right {
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+    }
+    .adt-calendar-title {
+      font-size: var(--adt-font-size-10);
+      flex: auto;
+      text-align: center;
+    }
+  }
+  & &-body {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &-cells {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 8px 8px 4px;
+  }
+  &-cell {
+    flex: none;
+    box-sizing: border-box;
+    width: calc(100% / 7);
+    height: 48px;
+    margin-bottom: 4px;
+    padding: 2px;
+    color: var(--adt-color-text);
+    cursor: pointer;
+    &&-today {
+      color: var(--adt-color-primary);
+    }
+    &&-disabled {
+      color: var(--adt-color-light);
+      .adt-calendar-cell-bottom {
+        color: var(--adt-color-light);
+      }
+    }
+    &&-selected {
+      && {
+        background: var(--adt-color-primary);
+        color: var(--adt-color-white);
+      }
+      & .adt-calendar-cell-bottom {
+        color: var(--adt-color-white);
+      }
+      &&-begin {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+      }
+      &&-end {
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+      }
+    }
+
+    &&-disabled&&-selected {
+      color: var(--adt-color-light);
+    }
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    & &-top {
+      flex: none;
+      font-size: var(--adt-font-size-10);
+    }
+    & &-bottom {
+      flex: none;
+      font-size: var(--adt-font-size-4);
+      height: 12px;
+      line-height: 12px;
+      color: var(--adt-color-weak);
+    }
+  }
+
+  &-mark {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: solid 1px var(--adt-color-border);
+    height: 45px;
+    box-sizing: border-box;
+    font-size: var(--adt-font-size-7);
+    padding: 0 8px;
+    & &-cell {
+      flex: 1;
+      text-align: center;
+    }
+  }
+}

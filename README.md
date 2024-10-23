@@ -39,7 +39,7 @@ moon atd-sample:dev-weapp
 - [x] Avatar
 - [x] Badge
 - [x] Button
-- [] Calendar
+- [x] Calendar
 - [] CalenderPicker
 - [] CalenderPickerView
 - [] CapsuleTabs

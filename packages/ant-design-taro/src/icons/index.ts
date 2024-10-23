@@ -1,3 +1,5 @@
+export * from './ArrowLeft'
+export * from './ArrowLeftDouble'
 export * from './BrokenImage'
 export * from './Check'
 export * from './CloseCircleFill'

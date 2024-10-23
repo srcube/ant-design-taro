@@ -7,6 +7,23 @@ import { Transform } from 'esbuild-plugin-transform'
 import { lessLoader } from 'esbuild-plugin-less'
 
 /**
+ * Copy package.json to dist
+ * @types {import('esbuild').Plugin}
+ */
+const copyFile = (file) => ({
+  name: 'copy-file',
+  setup(build) {
+    build.onEnd(() => {
+      const source = import.meta.dirname + '/' + file
+      const destination = import.meta.dirname + '/dist/' + file.split('/').pop()
+      fs.copyFileSync(source, destination)
+      console.log(`${file} copied to dist`)
+    })
+  },
+})
+
+/**
+ * Transform .less to .css
  * @types {import('esbuild').Plugin} */
 const transLessExt = (options = {}) => ({
   name: 'trans-less-ext',
@@ -49,7 +66,15 @@ try {
     bundle: false,
     plugins: [
       Transform({
-        plugins: [clean(), dts(), lessLoader(), transLessExt()],
+        plugins: [
+          clean(),
+          copyFile('package.json'),
+          copyFile('../../LICENSE.md'),
+          copyFile('../../README.md'),
+          dts(),
+          lessLoader(),
+          transLessExt(),
+        ],
       }),
     ],
   })

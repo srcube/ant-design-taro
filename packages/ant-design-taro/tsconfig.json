@@ -10,7 +10,7 @@
     "incremental": false,
     "isolatedModules": true,
     "moduleDetection": "force",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "noUncheckedIndexedAccess": true,
     "outDir": "dist",
     "noEmit": false,

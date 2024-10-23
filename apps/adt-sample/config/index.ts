@@ -36,9 +36,7 @@ export default defineConfig(
       framework: 'react',
       compiler: {
         type: 'webpack5',
-        prebundle: {
-          exclude: ['@srcube/ant-design-taro'],
-        },
+        prebundle: {},
       },
       cache: {
         enable: false, // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache

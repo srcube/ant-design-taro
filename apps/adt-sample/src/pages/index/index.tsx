@@ -5,6 +5,7 @@ import {
   Avatar,
   Badge,
   Button,
+  Calendar,
   Card,
   Collapse,
   Divider,
@@ -128,6 +129,10 @@ export default function Index() {
           <Button color='warning' size='small' block>
             WARNING
           </Button>
+        </Overview>
+        {/* Calendar */}
+        <Overview title='Calendar'>
+          <Calendar />
         </Overview>
         {/* Card */}
         <Overview
