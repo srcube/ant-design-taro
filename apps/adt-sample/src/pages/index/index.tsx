@@ -10,6 +10,7 @@ import {
   Collapse,
   Divider,
   DotLoading,
+  Footer,
   Image,
   Input,
   List,
@@ -179,6 +180,34 @@ export default function Index() {
           <DotLoading className='!size-6 !bg-green-6' />
           <DotLoading className='!size-8 !bg-red-6' />
           <DotLoading color='primary' className='!size-10' />
+        </Overview>
+        {/* Footer */}
+        <Overview title='Footer'>
+          <Footer
+            label={
+              <View className=':uno: flex items-center gap-2'>
+                <Image
+                  src='https://gw.alipayobjects.com/zos/bmw-prod/b2c7ff8b-eba0-4af9-9dd5-0b5b17f42c57.svg'
+                  width={20}
+                  height={20}
+                />
+                <Text>Ant Design Taro</Text>
+              </View>
+            }
+            content='Made with ❤️ by Srcube'
+            links={[
+              { text: 'AntD Mobile', href: 'https://mobile.ant.design/' },
+              {
+                text: 'AntD Taro',
+                href: 'https://github.com/srcube/ant-design-taro',
+              },
+            ]}
+            chips={[
+              { text: '蚂蚁借呗', type: 'link' },
+              { text: '备用金', type: 'link' },
+              { text: '蚂蚁花呗', type: 'link' },
+            ]}
+          />
         </Overview>
         {/* Image */}
         <Overview

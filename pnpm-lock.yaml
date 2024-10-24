@@ -216,6 +216,9 @@ importers:
       '@tarojs/taro':
         specifier: 3.6.34
         version: 3.6.34(@tarojs/helper@3.6.34(@swc/helpers@0.5.13))(@tarojs/runtime@3.6.34(@tarojs/shared@3.6.34))(@types/react@18.3.5)(postcss@8.4.47)
+      '@use-gesture/react':
+        specifier: ^10.3.1
+        version: 10.3.1(react@18.3.1)
       ahooks:
         specifier: ^3.8.1
         version: 3.8.1(react@18.3.1)
@@ -228,12 +231,18 @@ importers:
       react:
         specifier: ^18.0.0
         version: 18.3.1
+      react-dom:
+        specifier: ^18.0.0
+        version: 18.3.1(react@18.3.1)
       react-is:
         specifier: ^18.3.1
         version: 18.3.1
       staged-components:
         specifier: ^1.1.3
         version: 1.1.3(react@18.3.1)
+      use-sync-external-store:
+        specifier: ^1.2.2
+        version: 1.2.2(react@18.3.1)
     devDependencies:
       '@types/node':
         specifier: ^18.19.50
@@ -241,9 +250,15 @@ importers:
       '@types/react':
         specifier: ^18.0.0
         version: 18.3.5
+      '@types/react-dom':
+        specifier: ^18.3.1
+        version: 18.3.1
       '@types/react-is':
         specifier: ^18.3.0
         version: 18.3.0
+      '@types/use-sync-external-store':
+        specifier: ^0.0.6
+        version: 0.0.6
       autoprefixer:
         specifier: ^10.4.20
         version: 10.4.20(postcss@8.4.47)
@@ -2615,6 +2630,9 @@ packages:
   '@types/range-parser@1.2.7':
     resolution: {integrity: sha512-hKormJbkJqzQGhziax5PItDUTMAM9uE2XXQmM37dyd4hVM+5aVl7oVxMVUiVQn2oCQFN/LKCZdvSM0pFRqbSmQ==}
 
+  '@types/react-dom@18.3.1':
+    resolution: {integrity: sha512-qW1Mfv8taImTthu4KoXgDfLuk4bydU6Q/TkADnDWWHwi4NX4BR+LWfTp2sVmTqRrsHvyDDTelgelxJ+SsejKKQ==}
+
   '@types/react-is@18.3.0':
     resolution: {integrity: sha512-KZJpHUkAdzyKj/kUHJDc6N7KyidftICufJfOFpiG6haL/BDQNQt5i4n1XDUL/nDZAtGLHDSWRYpLzKTAKSvX6w==}
 
@@ -2654,6 +2672,9 @@ packages:
 
   '@types/unist@3.0.3':
     resolution: {integrity: sha512-ko/gIFJRv177XgZsZcBwnqJN5x/Gien8qNOn0D5bQU/zAzVf9Zt3BlcUiLqhV9y4ARk0GbT3tnUiPNgnTXzc/Q==}
+
+  '@types/use-sync-external-store@0.0.6':
+    resolution: {integrity: sha512-zFDAD+tlpf2r4asuHEj0XH6pY6i0g5NeAHPn+15wk3BV6JA69eERFXC1gyGThDkVa1zCyKr5jox1+2LbV/AMLg==}
 
   '@types/web-bluetooth@0.0.20':
     resolution: {integrity: sha512-g9gZnnXVq7gM7v3tJCWV/qw7w+KeOlSHAhgF9RytFyifW6AF61hdT2ucrYhPq9hLs5JIryeupHV3qGk95dH9ow==}
@@ -2853,6 +2874,14 @@ packages:
     resolution: {integrity: sha512-Emacl2uNau0pa7/wEFCQxAxwK3nkIa+Kp2CAcJdlwcaNBcqtowkTga0FOdq71YUENXv+aziK7mV6lrjdS/hgcA==}
     peerDependencies:
       webpack: ^4 || ^5
+
+  '@use-gesture/core@10.3.1':
+    resolution: {integrity: sha512-WcINiDt8WjqBdUXye25anHiNxPc0VOrlT8F6LLkU6cycrOGUDyY/yyFmsg3k8i5OLvv25llc0QC45GhR/C8llw==}
+
+  '@use-gesture/react@10.3.1':
+    resolution: {integrity: sha512-Yy19y6O2GJq8f7CHf7L0nxL8bf4PZCPaVOCgJrusOeFHY1LvHgYXnmnXg6N5iwAnbgbZCDjo60SiM6IPJi9C5g==}
+    peerDependencies:
+      react: '>= 16.8.0'
 
   '@vitejs/plugin-vue@5.1.4':
     resolution: {integrity: sha512-N2XSI2n3sQqp5w7Y/AN/L2XDjBIRGqXko+eDp42sydYSBeJuSm5a1sLf8zakmo8u7tA8NmBgoDLA1HeOESjp9A==}
@@ -8331,6 +8360,11 @@ packages:
     resolution: {integrity: sha512-0kQLIzG4fdk/G5NONku64rSH/x32NOA39LVQqlK8Le6lvTF6GGRJpqaQFGgU+CLwySIqBSMdwYM0sYcW9f6P4A==}
     engines: {node: '>= 4'}
 
+  use-sync-external-store@1.2.2:
+    resolution: {integrity: sha512-PElTlVMwpblvbNqQ82d2n6RjStvdSoNe9FG28kNfz3WiXilJm4DdNkEzRhCZuIDwY8U08WVihhGR5iRqAwfDiw==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
@@ -10845,6 +10879,26 @@ snapshots:
       - postcss
       - react
 
+  '@tarojs/components@3.6.34(@tarojs/helper@3.6.34(@swc/helpers@0.5.13))(@tarojs/runtime@3.6.34(@tarojs/shared@3.6.34))(@types/react@18.3.5)(postcss@8.4.45)':
+    dependencies:
+      '@stencil/core': 2.22.3
+      '@tarojs/components-advanced': 3.6.34(@tarojs/helper@3.6.34(@swc/helpers@0.5.13))(@tarojs/runtime@3.6.34(@tarojs/shared@3.6.34))(@tarojs/shared@3.6.34)(@tarojs/taro@3.6.34(@tarojs/helper@3.6.34(@swc/helpers@0.5.13))(@tarojs/runtime@3.6.34(@tarojs/shared@3.6.34))(@types/react@18.3.5)(postcss@8.4.47))(@types/react@18.3.5)(react@18.3.1)
+      '@tarojs/taro': 3.6.34(@tarojs/helper@3.6.34(@swc/helpers@0.5.13))(@tarojs/runtime@3.6.34(@tarojs/shared@3.6.34))(@types/react@18.3.5)(postcss@8.4.45)
+      classnames: 2.5.1
+      hammerjs: 2.0.8
+      hls.js: 1.5.15
+      resolve-pathname: 3.0.0
+      swiper: 6.8.0
+      tslib: 2.7.0
+    optionalDependencies:
+      '@types/react': 18.3.5
+    transitivePeerDependencies:
+      - '@tarojs/helper'
+      - '@tarojs/runtime'
+      - '@types/webpack'
+      - '@types/webpack-dev-server'
+      - postcss
+
   '@tarojs/helper@3.6.34(@swc/helpers@0.5.13)':
     dependencies:
       '@babel/core': 7.25.2
@@ -10987,7 +11041,7 @@ snapshots:
   '@tarojs/plugin-platform-harmony-hybrid@3.6.34(@swc/helpers@0.5.13)(@tarojs/helper@3.6.34(@swc/helpers@0.5.13))(@tarojs/taro@3.6.34(@tarojs/helper@3.6.34(@swc/helpers@0.5.13))(@tarojs/runtime@3.6.34(@tarojs/shared@3.6.34))(@types/react@18.3.5)(postcss@8.4.45))(@types/react@18.3.5)(postcss@8.4.45)(react@18.3.1)':
     dependencies:
       '@tarojs/api': 3.6.34
-      '@tarojs/components': 3.6.34(@tarojs/helper@3.6.34(@swc/helpers@0.5.13))(@tarojs/runtime@3.6.34(@tarojs/shared@3.6.34))(@tarojs/shared@3.6.34)(@types/react@18.3.5)(postcss@8.4.45)(react@18.3.1)
+      '@tarojs/components': 3.6.34(@tarojs/helper@3.6.34(@swc/helpers@0.5.13))(@tarojs/runtime@3.6.34(@tarojs/shared@3.6.34))(@types/react@18.3.5)(postcss@8.4.45)
       '@tarojs/components-react': 3.6.34(@tarojs/helper@3.6.34(@swc/helpers@0.5.13))(@tarojs/runtime@3.6.34(@tarojs/shared@3.6.34))(@tarojs/shared@3.6.34)(@types/react@18.3.5)(postcss@8.4.45)(react@18.3.1)
       '@tarojs/plugin-platform-h5': 3.6.34(@swc/helpers@0.5.13)(@tarojs/helper@3.6.34(@swc/helpers@0.5.13))(@tarojs/taro@3.6.34(@tarojs/helper@3.6.34(@swc/helpers@0.5.13))(@tarojs/runtime@3.6.34(@tarojs/shared@3.6.34))(@types/react@18.3.5)(postcss@8.4.45))(@types/react@18.3.5)(postcss@8.4.45)(react@18.3.1)
       '@tarojs/router': 3.6.34(@tarojs/runtime@3.6.34(@tarojs/shared@3.6.34))(@tarojs/shared@3.6.34)(@tarojs/taro@3.6.34(@tarojs/helper@3.6.34(@swc/helpers@0.5.13))(@tarojs/runtime@3.6.34(@tarojs/shared@3.6.34))(@types/react@18.3.5)(postcss@8.4.45))
@@ -11589,6 +11643,10 @@ snapshots:
 
   '@types/range-parser@1.2.7': {}
 
+  '@types/react-dom@18.3.1':
+    dependencies:
+      '@types/react': 18.3.5
+
   '@types/react-is@18.3.0':
     dependencies:
       '@types/react': 18.3.5
@@ -11634,6 +11692,8 @@ snapshots:
   '@types/tough-cookie@4.0.5': {}
 
   '@types/unist@3.0.3': {}
+
+  '@types/use-sync-external-store@0.0.6': {}
 
   '@types/web-bluetooth@0.0.20': {}
 
@@ -11934,6 +11994,13 @@ snapshots:
     transitivePeerDependencies:
       - rollup
       - supports-color
+
+  '@use-gesture/core@10.3.1': {}
+
+  '@use-gesture/react@10.3.1(react@18.3.1)':
+    dependencies:
+      '@use-gesture/core': 10.3.1
+      react: 18.3.1
 
   '@vitejs/plugin-vue@5.1.4(vite@5.4.9(@types/node@18.19.50)(less@4.2.0)(lightningcss@1.26.0)(sass@1.50.0)(stylus@0.55.0)(terser@5.31.6))(vue@3.5.12(typescript@5.5.4))':
     dependencies:
@@ -18283,6 +18350,10 @@ snapshots:
       requires-port: 1.0.0
 
   url-to-options@1.0.1: {}
+
+  use-sync-external-store@1.2.2(react@18.3.1):
+    dependencies:
+      react: 18.3.1
 
   util-deprecate@1.0.2: {}
 
