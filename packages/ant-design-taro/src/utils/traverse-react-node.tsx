@@ -1,4 +1,4 @@
-import { Children } from 'react'
+import React from 'react'
 import type { ReactNode } from 'react'
 import { isFragment } from 'react-is'
 
@@ -8,7 +8,7 @@ export function traverseReactNode(
 ) {
   let i = 0
   function handle(target: ReactNode) {
-    Children.forEach(target, (child) => {
+    React.Children.forEach(target, (child) => {
       if (!isFragment(child)) {
         fn(child, i)
         i += 1

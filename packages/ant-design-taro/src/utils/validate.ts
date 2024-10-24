@@ -1,4 +1,3 @@
-import { navigator } from '@tarojs/runtime'
 import { canUseDom } from './can-use-dom'
 
 export function isDef<T>(val: T): val is NonNullable<T> {
