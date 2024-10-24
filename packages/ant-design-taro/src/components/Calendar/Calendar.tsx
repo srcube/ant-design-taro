@@ -81,16 +81,26 @@ const defaultProps = {
   weekStartsOn: 'Sunday',
   defaultValue: null,
   allowClear: true,
-  prevMonthButton: <ArrowLeft style={{ backgroundColor: '#000' }} />,
-  prevYearButton: <ArrowLeftDouble style={{ backgroundColor: '#000' }} />,
+  prevMonthButton: (
+    <ArrowLeft style={{ backgroundColor: 'var(--adt-color-primary)' }} />
+  ),
+  prevYearButton: (
+    <ArrowLeftDouble style={{ backgroundColor: 'var(--adt-color-primary)' }} />
+  ),
   nextMonthButton: (
     <ArrowLeft
-      style={{ backgroundColor: '#000', transform: 'rotate(180deg)' }}
+      style={{
+        backgroundColor: 'var(--adt-color-primary)',
+        transform: 'rotate(180deg)',
+      }}
     />
   ),
   nextYearButton: (
     <ArrowLeftDouble
-      style={{ backgroundColor: '#000', transform: 'rotate(180deg)' }}
+      style={{
+        backgroundColor: 'var(--adt-color-primary)',
+        transform: 'rotate(180deg)',
+      }}
     />
   ),
 }
